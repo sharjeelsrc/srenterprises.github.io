@@ -69,13 +69,13 @@
   ]  
 }  
 </script> 
-  <style>  
-
+<style>
+/* Slider container */
 .carousel-item {
   position: relative;
 }
 
-/* Overlay container */
+/* Overlay */
 .slider-overlay {
   position: absolute;
   inset: 0;
@@ -87,30 +87,38 @@
   color: #fff;
 }
 
-/* Content */
+/* Content wrapper */
 .slider-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px; /* CONTROLS SPACE (small gap) */
+  gap: 2px;           /* VERY SMALL GAP */
+  line-height: 1.1;  /* IMPORTANT: removes extra height */
 }
 
 /* Logo */
 .slider-content img {
-  width: 70px;
+  width: 65px;
+  margin: 0;
+  padding: 0;
 }
 
 /* Business name */
 .slider-content h1 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
-  margin: 0; /* IMPORTANT: removes extra space */
+  margin: 0;
+  padding: 0;
+  line-height: 1.1; /* FIXES hidden spacing */
 }
 
 /* Phone number */
 .slider-content a {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
   color: #fff;
   text-decoration: none;
 }
@@ -118,22 +126,38 @@
 /* Mobile optimization */
 @media (max-width: 768px) {
   .slider-content img {
-    width: 55px;
+    width: 52px;
   }
   .slider-content h1 {
     font-size: 22px;
   }
   .slider-content a {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
-.call-btn,.whatsapp-btn{  
- position:fixed; bottom:20px; z-index:999;  
- padding:12px 18px; color:#fff; font-weight:bold;  
- border-radius:50px; text-decoration:none;  
-}  
-.call-btn{ left:20px; background:#0d6efd; }  
-.whatsapp-btn{ right:20px; background:#25D366; }  
+
+/* Floating buttons */
+.call-btn,
+.whatsapp-btn {  
+  position: fixed;
+  bottom: 20px;
+  z-index: 9999;
+  padding: 12px 18px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.call-btn {
+  left: 20px;
+  background: #0d6efd;
+}
+
+.whatsapp-btn {
+  right: 20px;
+  background: #25D366;
+}
 </style> 
 </head>  
 <body>  <!-- NAVBAR -->  <a class="navbar-brand d-flex align-items-center fw-bold fs-3 text-primary" href="index.html">  
