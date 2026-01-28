@@ -67,16 +67,22 @@
   ]  
 }  
 </script>  <style>  
-.carousel-item img{
-  width:100%;
-  height:65vh;          /* Desktop */
-  object-fit:cover;
+
+.carousel-item {
+  height: 75vh;              /* desktop height */
+  background: #000;          /* avoids white gaps */
 }
 
-@media (max-width:768px){
-  .carousel-item img{
-    height:35vh;        /* Mobile */
-    object-fit:cover;
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* SHOW FULL IMAGE (NO CROP) */
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 45vh;
   }
 }
 .call-btn,.whatsapp-btn{  
