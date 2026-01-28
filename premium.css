@@ -1,0 +1,83 @@
+/* ================= PREMIUM THEME ================= */
+:root{
+  --primary:#0d6efd;
+  --primary-dark:#084298;
+  --accent:#25D366;
+  --dark:#1f2937;
+  --gray:#6b7280;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --radius:16px;
+}
+
+/* GLOBAL */
+body{
+  font-family:Poppins,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.7;
+}
+
+/* NAVBAR */
+.navbar{
+  background:var(--white)!important;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.navbar-brand{
+  font-weight:800;
+  color:var(--primary)!important;
+}
+
+.navbar-brand img{
+  border-radius:10px;
+}
+
+/* HERO */
+.carousel-item{
+  position:relative;
+}
+
+.hero-overlay{
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.35)
+  );
+}
+
+.hero-content h1{
+  font-weight:800;
+}
+
+/* CTA */
+.hero-buttons a,
+.call-btn,
+.whatsapp-btn{
+  border-radius:999px;
+  font-weight:700;
+  transition:all .3s ease;
+}
+
+.hero-call{background:var(--primary);}
+.hero-whatsapp{background:var(--accent);}
+
+.hero-buttons a:hover,
+.call-btn:hover,
+.whatsapp-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+
+/* CARDS */
+.card{
+  border:none;
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 45px rgba(0,0,0,.14);
+  }
