@@ -117,3 +117,45 @@ footer {
   color: var(--gray);
   border-top: 1px solid var(--border);
   }
+/* ================= FIX NAVBAR + SLIDER GAP ================= */
+
+/* Remove all default spacing */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar must not push content */
+.navbar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+
+/* Remove any top spacing from slider */
+#mainSlider,
+.carousel,
+.carousel-inner,
+.carousel-item {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ================= SLIDER IMAGE FIX ================= */
+
+/* Desktop: full image, no crop */
+.slider-img {
+  width: 100%;
+  height: auto;        /* KEY FIX */
+  max-height: 75vh;    /* Prevent oversize */
+  object-fit: contain; /* NO CROPPING */
+  display: block;
+  background: #000;    /* Fills empty space cleanly */
+}
+
+/* Mobile: better visual fill */
+@media (max-width: 768px) {
+  .slider-img {
+    height: 55vh;
+    object-fit: cover; /* Looks better on mobile */
+  }
+  }
