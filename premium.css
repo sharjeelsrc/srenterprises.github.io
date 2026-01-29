@@ -29,6 +29,34 @@ p {
     height: 45vh;
   }
 }
+/* ===== CLEAN FULL-WIDTH SLIDER ===== */
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+#mainSlider {
+  margin-top: 0 !important;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  margin-top: 0 !important;
+}
+
+.slider-img {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slider-img {
+    height: 45vh;
+  }
+}
 /* ================= NAVBAR ================= */
 .navbar {
   background: var(--white);
