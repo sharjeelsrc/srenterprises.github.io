@@ -1,4 +1,14 @@
 /* ================= GLOBAL ================= */
+:root{
+  --primary:#2563eb;
+  --dark:#0f172a;
+  --gray:#475569;
+  --light:#f8fafc;
+  --white:#ffffff;
+  --border:#e5e7eb;
+  --radius:18px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -20,7 +30,7 @@ p {
 /* ================= NAVBAR ================= */
 .navbar {
   margin-bottom: 0 !important;
-  padding-bottom: 0;
+  padding: 10px 14px;
   background: var(--white);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
@@ -35,6 +45,8 @@ p {
   padding: 8px 14px;
   border-radius: 999px;
   font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
 }
 
 /* ================= SLIDER (NO GAP) ================= */
@@ -46,32 +58,59 @@ p {
   padding: 0 !important;
 }
 
-/* ================= SLIDER IMAGE ================= */
+/* ================= SLIDER IMAGE (FIXED) ================= */
 
-/* Desktop: full image visible */
+/* Desktop & Laptop */
 .slider-img {
   width: 100%;
-  height: auto;
-  max-height: 75vh;
-  object-fit: contain;     /* NO CROP on desktop */
+  height: 60vh;               /* Ideal hero height */
+  max-height: 520px;          /* Prevent oversized images */
+  object-fit: cover;          /* Clean full-width look */
   display: block;
-  background: #000;
 }
 
-/* Mobile: FIT TO SCREEN */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 992px) {
   .slider-img {
-    width: 100%;
-    height: 100vh;         /* FULL mobile screen height */
-    object-fit: cover;     /* Fills screen nicely */
-    background: none;
+    height: 45vh;
+    max-height: 420px;
   }
 }
 
-/* ================= CTA BUTTONS (KEEP FOR LATER USE) ================= */
+/* Mobile */
+@media (max-width: 768px) {
+  .slider-img {
+    height: 32vh;             /* Perfect mobile size */
+    max-height: 260px;
+    object-fit: cover;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .slider-img {
+    height: 28vh;
+    max-height: 220px;
+  }
+}
+
+/* ================= HERO TEXT (OPTIONAL FUTURE USE) ================= */
+.slider-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* ================= CTA BUTTONS ================= */
 .hero-buttons a {
   border-radius: 999px;
   font-weight: 700;
+  padding: 12px 22px;
   transition: all 0.3s ease;
 }
 
@@ -83,10 +122,17 @@ p {
 /* ================= SECTIONS ================= */
 .section-title h2 {
   color: var(--dark);
+  position: relative;
 }
 
 .section-title h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
   background: var(--primary);
+  display: block;
+  margin-top: 8px;
+  border-radius: 999px;
 }
 
 /* ================= CARDS ================= */
@@ -124,4 +170,6 @@ footer {
   background: var(--white);
   color: var(--gray);
   border-top: 1px solid var(--border);
+  padding: 30px 0;
+  text-align: center;
   }
