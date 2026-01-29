@@ -46,22 +46,25 @@ p {
   padding: 0 !important;
 }
 
-/* ================= SLIDER IMAGE FIX ================= */
-/* Desktop: FULL IMAGE, NO CROPPING */
+/* ================= SLIDER IMAGE ================= */
+
+/* Desktop: full image visible */
 .slider-img {
   width: 100%;
-  height: auto;           /* Image decides height */
-  max-height: 75vh;       /* Prevent too tall images */
-  object-fit: contain;    /* NO CROPPING */
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;     /* NO CROP on desktop */
   display: block;
-  background: #000;       /* Clean bars if needed */
+  background: #000;
 }
 
-/* Mobile: better visual fill */
+/* Mobile: FIT TO SCREEN */
 @media (max-width: 768px) {
   .slider-img {
-    height: 55vh;
-    object-fit: cover;    /* Looks good on mobile */
+    width: 100%;
+    height: 100vh;         /* FULL mobile screen height */
+    object-fit: cover;     /* Fills screen nicely */
+    background: none;
   }
 }
 
