@@ -1,5 +1,7 @@
 /* ================= GLOBAL ================= */
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", system-ui, sans-serif;
   background: var(--light);
   color: var(--dark);
@@ -18,6 +20,7 @@ p {
 /* ================= NAVBAR ================= */
 .navbar {
   margin-bottom: 0 !important;
+  padding-bottom: 0;
   background: var(--white);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
@@ -34,33 +37,35 @@ p {
   font-weight: 600;
 }
 
-/* ================= SLIDER ================= */
-#mainSlider {
-  margin-top: 0 !important;
-}
-
+/* ================= SLIDER (NO GAP) ================= */
+#mainSlider,
 .carousel,
 .carousel-inner,
 .carousel-item {
-  margin-top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* FULL WIDTH SLIDER IMAGE */
+/* ================= SLIDER IMAGE FIX ================= */
+/* Desktop: FULL IMAGE, NO CROPPING */
 .slider-img {
   width: 100%;
-  height: 65vh;
-  object-fit: cover;
+  height: auto;           /* Image decides height */
+  max-height: 75vh;       /* Prevent too tall images */
+  object-fit: contain;    /* NO CROPPING */
   display: block;
+  background: #000;       /* Clean bars if needed */
 }
 
-/* Mobile adjustment */
+/* Mobile: better visual fill */
 @media (max-width: 768px) {
   .slider-img {
-    height: 45vh;
+    height: 55vh;
+    object-fit: cover;    /* Looks good on mobile */
   }
 }
 
-/* ================= CTA BUTTONS ================= */
+/* ================= CTA BUTTONS (KEEP FOR LATER USE) ================= */
 .hero-buttons a {
   border-radius: 999px;
   font-weight: 700;
@@ -116,46 +121,4 @@ footer {
   background: var(--white);
   color: var(--gray);
   border-top: 1px solid var(--border);
-  }
-/* ================= FIX NAVBAR + SLIDER GAP ================= */
-
-/* Remove all default spacing */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Navbar must not push content */
-.navbar {
-  margin-bottom: 0 !important;
-  padding-bottom: 0;
-}
-
-/* Remove any top spacing from slider */
-#mainSlider,
-.carousel,
-.carousel-inner,
-.carousel-item {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* ================= SLIDER IMAGE FIX ================= */
-
-/* Desktop: full image, no crop */
-.slider-img {
-  width: 100%;
-  height: auto;        /* KEY FIX */
-  max-height: 75vh;    /* Prevent oversize */
-  object-fit: contain; /* NO CROPPING */
-  display: block;
-  background: #000;    /* Fills empty space cleanly */
-}
-
-/* Mobile: better visual fill */
-@media (max-width: 768px) {
-  .slider-img {
-    height: 55vh;
-    object-fit: cover; /* Looks better on mobile */
-  }
   }
