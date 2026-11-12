@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sharjeelsrc.github.io/srenterprises.github.io/sitemap.xml
